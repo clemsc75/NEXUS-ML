@@ -1,0 +1,25 @@
+# --- Backend API ---
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+pydantic==2.6.0
+pydantic-settings==2.1.0
+
+# --- Database ---
+sqlalchemy==2.0.25
+
+# --- Machine Learning Core ---
+# Note: Pour le support GPU (CUDA), l'installation manuelle est recommandée selon votre matériel
+torch==2.2.0
+numpy==1.26.3
+
+# --- Utilities ---
+python-dotenv==1.0.1
+requests==2.31.0
+
+# --- Dev / Quality ---
+black==24.1.1   # Formattage automatique
+mypy==1.8.0     # Vérification statique des types
+pytest==8.0.0   # Tests unitaires
+httpx==0.26.0   # Client HTTP pour les tests
