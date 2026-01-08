@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS-ML Dashboard</title>
+    <!-- Chart.js pour les graphiques -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NEXUS-ML 🧠</h1>
+            <span class="status-badge" id="serverStatus">Déconnecté</span>
+        </header>
+
+        <main>
+            <!-- Panneau de Configuration -->
+            <section class="config-panel">
+                <h2>Configuration de l'Expérience</h2>
+                <form id="trainingForm">
+                    <div class="form-group">
+                        <label>Nom de l'expérience</label>
+                        <input type="text" id="expName" value="Snake_Test_01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Environnement</label>
+                        <select id="envId">
+                            <option value="snake_v1">Snake v1</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Épisodes</label>
+                        <input type="number" id="episodes" value="1000">
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="startBtn">
+                        Lancer l'entraînement 🚀
+                    </button>
+                </form>
+
+                <div id="jobInfo" class="hidden">
+                    <h3>Job ID: <span id="currentJobId">...</span></h3>
+                    <p>Statut: <span id="jobStatus">En attente...</span></p>
+                </div>
+            </section>
+
+            <!-- Panneau des Graphiques -->
+            <section class="charts-panel">
+                <canvas id="scoreChart"></canvas>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/charts.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
